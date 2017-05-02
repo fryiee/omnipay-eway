@@ -123,6 +123,19 @@ class RapidDirectGateway extends AbstractGateway
     }
 
     /**
+     * Create a query card request.
+     *
+     * Used for querying an existing payment token.
+     *
+     * @param array $parameters
+     * @return \Omnipay\Common\Message\AbstractRequest
+     */
+    public function queryCard(array $parameters = array())
+    {
+        return $this->createRequest('\Omnipay\Eway\Message\RapidDirectQueryCardRequest', $parameters);
+    }
+
+    /**
      * Create a purchase request.
      *
      * Used for initiating a purchase transaction.
